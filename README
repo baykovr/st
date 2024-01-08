@@ -7,6 +7,11 @@ Requirements
 ------------
 In order to build st you need the Xlib header files.
 
+Nix Build
+-----------------
+This fork has nix flake support.
+
+    nix build
 
 Installation
 ------------

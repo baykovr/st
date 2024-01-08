@@ -35,7 +35,7 @@
 
         installPhase = ''
           mkdir -p $out/bin
-          cp -r * $out/bin
+          cp -r st $out/bin
         '';
       };
       packages.x86_64-linux.default = self.packages.x86_64-linux.st;
