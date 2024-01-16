@@ -30,7 +30,7 @@
         
         # Assuming you have a Makefile, otherwise specify buildPhase
         buildPhase = ''
-          make
+          make -B
         '';
 
         installPhase = ''
