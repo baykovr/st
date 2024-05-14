@@ -17,7 +17,7 @@ jobs:
         run: nix build
       - name: custom
         id: hello
-        uses: baykovr/hello-world-docker-action@latest
+        uses: baykovr/hello-world-docker-action@main
         with:
           who-to-greet: 'neat'
       - name: fetch output
