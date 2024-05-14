@@ -15,4 +15,10 @@ jobs:
         uses: DeterminateSystems/magic-nix-cache-action@main
       - name: build
         run: nix build
-
+      - name: custom
+        id: hello
+        uses: baykovr/hello-world-docker-action@latest
+        with:
+          who-to-greet: 'neat'
+      - name: fetch output
+        run: echo "${{ steps.hello.outputs.time }}"
