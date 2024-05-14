@@ -8,10 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: cache
-        uses: actions/cache@v3
-        with:
-          path: /nix
-
+        uses: DeterminateSystems/magic-nix-cache-action@main
       - name: build
         uses: actions/checkout@v4
       - name: nix-isntall
