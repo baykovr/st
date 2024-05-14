@@ -1,0 +1,14 @@
+name: make
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v25
+      - run: nix build
+      - run: nix flake check
+
