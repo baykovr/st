@@ -7,8 +7,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: cachix/install-nix-action@v25
+      - name: cache
+        uses: actions/cache@v3
+        with:
+          path: /nix
+
+      - name: build
+        uses: actions/checkout@v4
+      - name: nix-isntall
+        uses: cachix/install-nix-action@v25
       - run: nix build
       - run: nix flake check
 
