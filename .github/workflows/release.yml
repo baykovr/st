@@ -4,9 +4,7 @@ on:
     branches:
       -release
       
-defaults:
-  runs-on: ubuntu-latest
-
 jobs:
   build:
+    uses: ./.github/workflows/build.yml
     
