@@ -6,4 +6,10 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/.build.yml
-    
+  upload:
+    steps:
+    - uses: actions/upload-artifact@v4
+      with:
+        name: st
+        path: result/bin/st
+      needs: build

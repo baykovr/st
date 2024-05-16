@@ -5,11 +5,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: build
+      - name: checkout
         uses: actions/checkout@v4
-      - name: nix-install
+
+      - name: setup-nix
         uses: cachix/install-nix-action@v25
-      - name: cache
+      
+      - name: setup-nix-cache
         uses: DeterminateSystems/magic-nix-cache-action@main
-      - name: build
+      
+      - name: nix-build
         run: nix build
