@@ -5,13 +5,4 @@ on:
       - main
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: build
-        uses: actions/checkout@v4
-      - name: nix-install
-        uses: cachix/install-nix-action@v25
-      - name: cache
-        uses: DeterminateSystems/magic-nix-cache-action@main
-      - name: build
-        run: nix build
+    uses: ./.github/workflows/build.yml
