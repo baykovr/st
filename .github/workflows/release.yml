@@ -1,8 +1,8 @@
-name: release
+name: releases
 on:
   push:
     branches:
-      - release
+      - releases
 jobs:
   build:
     uses: ./.github/workflows/.build.yml
