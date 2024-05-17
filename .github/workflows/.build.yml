@@ -1,18 +1,25 @@
 name: .build
 on:
   workflow_call:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v4
-
+                  
       - name: setup-nix
         uses: cachix/install-nix-action@v25
-      
+                  
       - name: setup-nix-cache
         uses: DeterminateSystems/magic-nix-cache-action@main
-      
+                  
       - name: nix-build
         run: nix build
+
+      - name: upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: st
+          path: ./result/bin/st
