@@ -5,4 +5,9 @@ on:
       - main
 jobs:
   build:
-    uses: ./.github/workflows/.build.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        uses: ./.github/workflows/.build.yml
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
