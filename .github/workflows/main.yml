@@ -10,5 +10,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: build
-        uses: ./.github/workflows/.build.yml
+        uses: .github/workflows/.build.yml
+      - name: env
+        run: env 
 
